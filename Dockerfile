@@ -9,7 +9,7 @@ RUN apt-get -y upgrade
 ENV DEBIAN_FRONTEND noninteractive
 
 #Install ssh-server and others dependencies
-RUN apt-get install -y openssh-server wget vim-nox
+RUN apt-get install -y openssh-server wget vim-nox pwgen
 
 #Config OS
 RUN mkdir -p /var/run/sshd && sed -i "s/UsePrivilegeSeparation.*/UsePrivilegeSeparation no/g" /etc/ssh/sshd_config && sed -i "s/UsePAM.*/UsePAM no/g" /etc/ssh/sshd_config
